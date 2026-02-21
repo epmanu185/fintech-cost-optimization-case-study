@@ -1,164 +1,145 @@
 # fintech-cost-optimization-case-study
 End-to-end cost and margin analysis of credit card payments in a B2B fintech platform, combining transaction data, processor invoices, and BI dashboards to improve unit economics.
 
-💳 Credit Card Payments Cost Optimization
+# 💳 Credit Card Payments Cost Optimization
 
-Domain: FinTech | B2B Payments | Financial Analytics
-Role: Data Analyst / BI Analyst
-Status: Completed
-Impact: ~$43,000 monthly cost savings
+**Domain:** FinTech | B2B Payments | Financial Analytics  
+**Role:** Data Analyst / BI Analyst  
+**Status:** Completed  
+**Impact:** ~$43,000 monthly cost savings  
 
-📌 Overview
+---
 
-This project focused on analyzing the profitability of credit card payment features offered by a B2B payments platform. Although the platform charged customers a standard processing fee, a detailed cost analysis revealed that the feature was operating at a loss due to high processor and network fees.
+## 📌 Overview
+
+This project focuses on analyzing the **profitability of credit card payment features** offered by a B2B payments platform.  
+Despite charging customers a standard processing fee, detailed cost analysis revealed that the feature was operating at a loss due to high processor and network fees.
 
 The objective was to identify cost leakages, understand root causes, and recommend data-driven strategies to improve unit economics.
 
-🏢 Business Context
+---
 
-Platform type: B2B Payments Platform
+## 🏢 Business Context
 
-Payment method analyzed: Credit Card Payments
+- Platform type: **B2B Payments Platform**
+- Payment method analyzed: **Credit Card Payments**
+- Monthly transaction volume: **$9M+**
+- Customer processing fee: **2.9% per transaction**
+- Card processors involved:
+  - National Processing
+  - TabaPay
+  - Card Networks (including American Express)
 
-Monthly transaction volume: $9M+
+---
 
-Customer processing fee: 2.9% per transaction
+## ❓ Problem Statement
 
-Card processors involved:
+Leadership observed declining margins on credit card transactions and needed clarity on:
 
-National Processing
+- Is the credit card payment feature profitable?
+- What are the key cost drivers?
+- Which actions can reduce processing costs without impacting customer experience?
 
-TabaPay
+---
 
-Card Networks (including AmEx)
+## 🗂️ Data Sources
 
-❓ Problem Statement
+- **MySQL Database**
+  - Transaction-level payment data
+  - Processor routing and fee details
+- **Monthly Processor Invoices**
+  - Provided as PDF files
+  - Converted into structured Excel data
+- **AI Assistance**
+  - Claude AI used to extract, normalize, and categorize invoice line items
 
-Despite strong transaction volumes and standard pricing, leadership suspected that the credit card payment feature might be negatively impacting profitability.
+---
 
-Key questions:
+## 🛠️ Tools & Technologies
 
-Is the credit card payment feature profitable?
+- SQL (MySQL)
+- Power BI
+- Python
+- Databricks
+- Excel
+- Claude AI (invoice parsing)
 
-Where are the major cost drivers?
+---
 
-What actions can reduce processing costs without hurting user experience?
+## 🔍 Methodology
 
-🗂️ Data Sources
+1. Extracted and aggregated transaction data from MySQL to calculate:
+   - Total transaction volume
+   - Fees collected from customers
+   - Net revenue by card type and processor
 
-MySQL Database
+2. Parsed monthly processor invoices and categorized:
+   - Interchange fees
+   - Network fees
+   - Processor-specific charges
 
-Transaction-level payment data
+3. Built a **cost vs revenue model** to evaluate:
+   - Net margin by processor
+   - Loss-making transaction routes
 
-Processor routing and fee details
+4. Conducted root cause analysis to identify:
+   - High-cost card networks
+   - Inefficient routing methods
+   - Fee structure issues
 
-Monthly Processor Invoices
+5. Researched industry best practices and processor agreements to identify feasible cost-optimization strategies.
 
-Provided as PDF files
+---
 
-Converted to structured Excel data
+## 📊 Key Findings
 
-AI Assistance
+- The credit card payment feature was operating at a **net loss**, despite charging a 2.9% processing fee.
+- Interchange and network fees were the primary contributors to margin erosion.
+- American Express transactions were significantly more expensive under the existing setup.
+- Collecting processing fees directly from credit cards increased downstream processing costs.
 
-Claude AI used to extract, normalize, and categorize invoice line items
+---
 
-🛠️ Tools & Technologies
+## 💡 Recommendations
 
-SQL (MySQL)
+### 1️⃣ Implement Level 3 Data Passing
+Reduce interchange fees for eligible B2B transactions by passing enhanced transaction data.
 
-Power BI
+### 2️⃣ Direct American Express Processing
+Leverage high transaction volume to negotiate a direct processing agreement with American Express.
 
-Python
+### 3️⃣ Change Fee Collection Method
+Shift processing fee recovery from credit cards to customer wallet or linked bank account to reduce additional processing overhead.
 
-Databricks
+---
 
-Excel
+## 🚀 Impact
 
-Claude AI (for invoice parsing)
+- Estimated **$43,000+ monthly cost savings**
+- Improved unit economics for credit card payments
+- Enabled leadership to make informed decisions on pricing, routing, and processor negotiations
+- Improved long-term sustainability of the payment feature
 
-🔍 Methodology
+---
 
-Extracted and aggregated transaction data from MySQL to calculate:
+## 📈 Stakeholders
 
-Total volume
+- Product & Engineering Teams
+- Finance & Operations Teams
+- Leadership & Strategy Teams
 
-Fees collected from customers
+---
 
-Net revenue by card type and processor
+## 🧠 Key Learnings
 
-Parsed monthly processor invoices and categorized:
+- High transaction volume does not guarantee profitability.
+- Detailed cost modeling is critical in fintech products.
+- Small routing and fee-structure changes can have significant financial impact.
+- Combining structured transaction data with unstructured invoice data unlocks deeper insights.
 
-Interchange fees
+---
 
-Network fees
+## 🔒 Notes
 
-Processor-specific charges
-
-Built a cost vs revenue model to evaluate:
-
-Net margin by processor
-
-Loss-making transaction routes
-
-Conducted root cause analysis to identify:
-
-High-cost card types
-
-Inefficient routing
-
-Fee structure issues
-
-Researched industry best practices and processor agreements to identify feasible cost-optimization strategies.
-
-📊 Key Findings
-
-The credit card payment feature was operating at a net loss, despite a 2.9% customer fee.
-
-Interchange and network fees were significantly higher for certain transaction routes.
-
-American Express transactions were particularly expensive under the existing setup.
-
-Fee recovery directly from credit cards increased downstream processing costs.
-
-💡 Recommendations
-
-Implement Level 3 Data Passing
-Reduce interchange fees for eligible B2B transactions.
-
-Direct AmEx Processing Agreement
-Leverage high transaction volume to negotiate a direct deal with American Express.
-
-Change Fee Collection Method
-Shift fee recovery from credit cards to customer wallet or bank account to reduce processing overhead.
-
-🚀 Impact
-
-Estimated $43,000+ monthly cost savings
-
-Improved unit economics for credit card payments
-
-Enabled leadership to make informed decisions on pricing, routing, and processor negotiations
-
-Strengthened long-term sustainability of the payment feature
-
-📈 Stakeholders
-
-Product & Engineering
-
-Finance & Operations
-
-Leadership & Strategy Teams
-
-🧠 Key Learnings
-
-High transaction volume does not guarantee profitability.
-
-Detailed cost modeling is critical in fintech products.
-
-Small routing and fee-structure changes can have large financial impact.
-
-Combining structured data with unstructured invoice data unlocks deeper insights.
-
-🔒 Notes
-
-Due to confidentiality, no production data or code is shared. This case study focuses on the analytical approach, decision-making process, and business impact.
+Due to confidentiality, no production data or source code is shared.  
+This repository focuses on the **analytical approach, methodology, and business impact** rather than implementation details.
